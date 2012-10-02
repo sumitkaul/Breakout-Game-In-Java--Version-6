@@ -7,9 +7,9 @@
   ########################################################################################-->
 
 	<!-- Base properties that will likely need to be changed when using this template for a different project -->
-	<property name="base.project.name" value="project-template" />
-	<property name="base.project.name.friendly" value="Team 1's A5" />
-	<property name="assignment.name" value="examples" />
+	<property name="base.project.name" value="team6" />
+	<property name="base.project.name.friendly" value="Team 6's A6" />
+	<property name="assignment.name" value="a6" />
 	<property name="code-root" value="." />
 	<property name="wwwroot" value="/u/kspace/www/fluency" />
 	<property name="junit-jar" value="junit-4.10.jar" />
