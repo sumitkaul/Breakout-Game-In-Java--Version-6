@@ -169,7 +169,7 @@
 
 	<target name="build-webstart" depends="compile" description="Create a webstartable jar file">
 		<delete file="${base.project.name}.jar" />
-		<unzip src="${lib}/{junit-jar}" dest="${project.build.home}" />
+		<unzip src="${lib}/${junit-jar}" dest="${project.build.home}" />
 
 		<copy todir="${project.build.home}" flatten="false">
 			<fileset dir="${src}">
