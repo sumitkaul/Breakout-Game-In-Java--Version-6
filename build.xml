@@ -10,13 +10,14 @@
 	<property name="base.project.name" value="team6" />
 	<property name="base.project.name.friendly" value="Team 6's A6" />
 	<property name="assignment.name" value="a6" />
+	<property name="semester" value="fall2012" />
 	<property name="code-root" value="." />
 	<property name="wwwroot" value="/u/kspace/www/fluency" />
 	<property name="junit-jar" value="junit-4.10.jar" />
 
 	<!-- Properties derived from the base properties above. Unlikely to change. -->
-	<property name="webstart.location" value="${wwwroot}/student-files/${assignment.name}/${base.project.name}/" />
-	<property name="dist.coverage.dir" value="${wwwroot}/coverage/${assignment.name}/${base.project.name}" />
+	<property name="webstart.location" value="${wwwroot}/student-files/${semester}/${assignment.name}/${base.project.name}/" />
+	<property name="dist.coverage.dir" value="${wwwroot}/coverage/${semester}/${assignment.name}/${base.project.name}" />
 	
 	<property name="key.alias" value="fluencykey" />
 	<property name="key.pass" value="fluency" />
