@@ -12,7 +12,7 @@
 	<property name="assignment.name" value="examples" />
 	<property name="code-root" value="." />
 	<property name="wwwroot" value="/u/kspace/www/fluency" />
-	<property name="junit-jar" value="junit-4.10.jar">
+	<property name="junit-jar" value="junit-4.10.jar" />
 
 	<!-- Properties derived from the base properties above. Unlikely to change. -->
 	<property name="webstart.location" value="${wwwroot}/student-files/${assignment.name}/${base.project.name}/" />
