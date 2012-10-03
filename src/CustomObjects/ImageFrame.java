@@ -9,8 +9,13 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -24,12 +29,10 @@ import utilities.Layers;
 
 import net.miginfocom.swing.MigLayout;
 
-public class ImageFrame extends JFrame implements ActionListener{
+public class ImageFrame extends JFrame{
 	
 	private JScrollPane scrollBar;
 	private JPanel panel;
-	private JButton okbutton;
-	private ButtonGroup group;
 	private JTextField type,name;
 	private JComboBox layerBox;
 	private String layer;
@@ -37,15 +40,19 @@ public class ImageFrame extends JFrame implements ActionListener{
 	
 	public ImageFrame(){
 		panel=new JPanel();
-		okbutton = new JButton("OK");
-		panel.setLayout(new MigLayout("","[]30[]")); 
+
+		panel.setLayout(new MigLayout("","[]30[]10[]")); 
 		scrollBar = new JScrollPane(panel,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);  
-		type= new JTextField("",10);
-		name= new JTextField("",10);
+		type= new JTextField("",8);
+		name= new JTextField("",8);
 		
-		File folder = new File("images");
-	    File[] listOfFiles = folder.listFiles();
-	    group = new ButtonGroup();
+		File folder = new File(getClass().getResource("/").getPath());
+	    File[] listOfFiles = folder.listFiles(new FilenameFilter() {
+	        public boolean accept(File dir, String name) {
+	            return name.toLowerCase().endsWith(".png");
+	        }
+	    });
+	    
 	    panel.add(new JLabel("Object Name: "));
 	    panel.add(name,"wrap");
 	    panel.add(new JLabel("Object Type: "));
@@ -55,20 +62,44 @@ public class ImageFrame extends JFrame implements ActionListener{
 	    panel.add(layerBox,"wrap");
 	    for (int i = 0; i < listOfFiles.length; i++) {
 	      if (listOfFiles[i].isFile()) {
-	        try {
-	        	JRadioButton jrbutton = new JRadioButton(listOfFiles[i].getName());
-	        	Image image = Toolkit.getDefaultToolkit().getImage(listOfFiles[i].getCanonicalPath());
-	        	ImageIcon icon = new ImageIcon(image.getScaledInstance(50, 50, 1));
-	        	JLabel iconimage = new JLabel(icon);
-	        	group.add(jrbutton);
-	        	panel.add(jrbutton);
-	        	panel.add(iconimage,"wrap");
-			} catch (IOException e) {
-				e.printStackTrace();
+	        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/"+listOfFiles[i].getName()));
+			ImageIcon icon = new ImageIcon(image.getScaledInstance(50, 50, 1));
+			final JLabel iconimage = new JLabel(icon);
+			iconimage.setToolTipText(listOfFiles[i].getName());
+			iconimage.addMouseListener(new MouseAdapter() {
+			      public void mouseClicked(MouseEvent e) {
+			    	  if(!name.getText().equalsIgnoreCase("")&&!type.getText().equalsIgnoreCase("")){
+			  			String filepath = getClass().getResource("/").getPath() + iconimage.getToolTipText();
+			  			setVisible(false);
+			  			if(layer==null)
+			  				layer = ((String) layerBox.getSelectedItem());
+			  			if(layer.equalsIgnoreCase(Constants.NEW_LAYER)) {
+			  	    		  layer = Layers.getInstance().addNewLayer();
+			  	    	}
+			  			Game.getSharedGame().getBoard().setCurrentLayer(layer);
+			  			if(isBackground){
+			  				Game.getSharedGame().getBoard().setBackGroundImagePath(filepath);
+			  			}
+			  			else{
+			  				GameMaker.getInstance().createNewObject(filepath,type.getText(),name.getText(), layer);
+			  			}
+			  			
+			  		}else{
+			  			JOptionPane.showMessageDialog(scrollBar, "Please select an image and enter the Object type/name");
+			  		}
+			  		
+			        }
+			      });
+			
+
+			if ((i+1)%3==0){
+			panel.add(iconimage,"wrap");
+			}else{
+				panel.add(iconimage);
 			}
 	      } 
 	    }
-	    panel.add(okbutton);
+
 	    setSize(400, 600);
 	    add(scrollBar);
 	    setFocusable(true);
@@ -86,7 +117,7 @@ public class ImageFrame extends JFrame implements ActionListener{
 		      }
 		 });
 
-	    okbutton.addActionListener(this);
+	   // okbutton.addActionListener(this);
 
 	}
 	
@@ -95,37 +126,5 @@ public class ImageFrame extends JFrame implements ActionListener{
 		this.isBackground = isBackground;
 	}
 
-	
-	public JRadioButton getSelection() {
-	    for (Enumeration e=group.getElements(); e.hasMoreElements(); ) {
-	        JRadioButton b = (JRadioButton)e.nextElement();
-	        if (b.getModel() == group.getSelection()) {
-	            return b;
-	        }
-	    }
-	    return null;
-	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if(!name.getText().equalsIgnoreCase("")&&!type.getText().equalsIgnoreCase("")&& !(getSelection()==null)){
-			String filepath = "images/"+getSelection().getText();	
-			setVisible(false);
-			if(layer==null)
-				layer = ((String) layerBox.getSelectedItem());
-			if(layer.equalsIgnoreCase(Constants.NEW_LAYER)) {
-	    		  layer = Layers.getInstance().addNewLayer();
-	    	}
-			Game.getSharedGame().getBoard().setCurrentLayer(layer);
-			if(isBackground){
-				Game.getSharedGame().getBoard().setBackGroundImagePath(filepath);
-			}
-			else{
-				GameMaker.getInstance().createNewObject(filepath,type.getText(),name.getText(), layer);
-			}
-			
-		}else{
-			JOptionPane.showMessageDialog(this, "Please select an image and enter the Object type/name");
-		}
-	}
 }
