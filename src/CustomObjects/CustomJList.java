@@ -3,8 +3,6 @@ package CustomObjects;
 import game.Game;
 import game.GameObject;
 
-import interfaces.Action;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;

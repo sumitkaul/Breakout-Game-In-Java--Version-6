@@ -1,30 +1,19 @@
 package CustomObjects;
 
 import game.Game;
-import game.GameObject;
 import gameMaker.GameMaker;
 
-import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FilenameFilter;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-
 import javax.swing.*;
 
 import utilities.Constants;
-import utilities.Event;
-import utilities.Helper;
 import utilities.Layers;
 
 import net.miginfocom.swing.MigLayout;

@@ -121,7 +121,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				//String name = getImageFileField().getText();
 				//Game.getSharedGame().getSelectedGameObject().setName(name);
 				LOG.info("In change for image file field");
@@ -131,7 +131,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void insertUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				LOG.info("In insert for image file field");
 				isNameChanged = true;
 				
@@ -139,7 +139,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void removeUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				LOG.info("In remove for image file field");
 				isNameChanged = true;
 				
@@ -151,7 +151,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+			
 				//String name = getImageFileField().getText();
 				try
 				{
@@ -170,7 +170,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void insertUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+			
 				try
 				{
 					LOG.info("in changed update");
@@ -188,7 +188,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void removeUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				try
 				{
 					LOG.info("in changed update");
@@ -215,7 +215,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+			
 				//String name = getImageFileField().getText();
 				try
 				{
@@ -234,7 +234,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void insertUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+			
 				try
 				{
 					LOG.info("in changed update");
@@ -251,7 +251,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void removeUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+			
 				try
 				{
 					LOG.info("in changed update");
@@ -274,7 +274,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+			
 				//String name = getImageFileField().getText();
 				try
 				{
@@ -292,7 +292,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void insertUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+			
 				try
 				{
 					LOG.info("in changed update");
@@ -308,7 +308,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void removeUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				try
 				{
 					LOG.info("in changed update");
@@ -329,7 +329,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				//String name = getImageFileField().getText();
 				try
 				{
@@ -347,7 +347,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void insertUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				try
 				{
 					LOG.info("in changed update");
@@ -363,7 +363,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void removeUpdate(DocumentEvent arg0) {
-				// TODO Auto-generated method stub
+				
 				try
 				{
 					LOG.info("in changed update");

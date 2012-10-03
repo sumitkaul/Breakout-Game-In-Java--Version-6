@@ -1,7 +1,5 @@
 package actions;
 
-import javax.swing.JOptionPane;
-
 import utilities.Actions;
 import game.Game;
 import game.GameObject;
