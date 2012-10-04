@@ -33,7 +33,7 @@
 	<property name="key.store" value="${webstart.home}/projectKeystore" />
 
 	<property name="emma.dir" value="${lib}" />
-	<property name="dist.tests.dir" value="${dist}/test" />
+	<property name="dist.tests.dir" value="${dist}/tests" />
 	<property name="tests.data.dir" value="${dist.tests.dir}/data" />
 	<property name="tests.classes.instr.dir" value="${dist.tests.dir}/classes-instr" />
 	<property name="tests.includes" value="**/*Tester.class,**/*Test.class,**/*TestCase.class" />
