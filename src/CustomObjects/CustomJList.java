@@ -26,7 +26,7 @@ public class CustomJList extends JList implements MouseListener, KeyListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	private DefaultListModel listModel;
-	private List selectedList;
+	private Object[] selectedList;
 	
 	public CustomJList(DefaultListModel eventActionListModel) {
 		super(eventActionListModel);
@@ -38,7 +38,7 @@ public class CustomJList extends JList implements MouseListener, KeyListener{
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		JList list = (JList)arg0.getComponent();
-		selectedList = list.getSelectedValuesList();
+		selectedList = list.getSelectedValues();
 
 	}
 
@@ -125,11 +125,11 @@ public class CustomJList extends JList implements MouseListener, KeyListener{
 		
 	}
 	
-	public List getSelectedList() {
+	public Object[] getSelectedList() {
 		return selectedList;
 	}
 
-	public void setSelectedList(List selectedList) {
+	public void setSelectedList(Object[] selectedList) {
 		this.selectedList = selectedList;
 	}
 

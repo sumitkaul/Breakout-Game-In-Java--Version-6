@@ -61,7 +61,7 @@ public class EventPanel extends JPanel implements GameObjectObserver{
 	private JScrollPane jscrollPane;
 	private KeyListenerPanel inputPanel;
 	
-	private DefaultListModel<String> eventActionListModel;
+	private DefaultListModel eventActionListModel;
 	
 	
 	private static EventPanel sharedEventPanel = null;
@@ -116,7 +116,7 @@ public class EventPanel extends JPanel implements GameObjectObserver{
 		add(addEventButton,"wrap,grow");
 		
 		
-		eventActionListModel = new DefaultListModel<String>();
+		eventActionListModel = new DefaultListModel();
 		eventActionList = new CustomJList(eventActionListModel);
 		//eventActionList.setPreferredSize(new Dimension(150,100));
 		eventActionList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -206,7 +206,7 @@ public class EventPanel extends JPanel implements GameObjectObserver{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				for (Object element : eventActionList.getSelectedValuesList()) {
+				for (Object element : eventActionList.getSelectedValues()) {
 
 					String testString = (String) element;
 					String[] stringComponents = testString.split("--->");

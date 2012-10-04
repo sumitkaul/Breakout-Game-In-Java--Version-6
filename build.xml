@@ -25,7 +25,7 @@
 	<property name="project.build.home" value="${code-root}/bin" />
 	<property name="dist" value="${code-root}/dist" />
 	<property name="test" value="${code-root}/test" />
-	<property name="testclasses" value="${code-root}/testbin" />
+	<property name="testclasses" value="${code-root}/bin" />
 	<property name="classes" value="${code-root}/bin" />
 	<property name="src" value="${code-root}/src" />
 	<property name="lib" value="${code-root}/lib" />
@@ -33,7 +33,7 @@
 	<property name="key.store" value="${webstart.home}/projectKeystore" />
 
 	<property name="emma.dir" value="${lib}" />
-	<property name="dist.tests.dir" value="${dist}/tests" />
+	<property name="dist.tests.dir" value="${dist}/test" />
 	<property name="tests.data.dir" value="${dist.tests.dir}/data" />
 	<property name="tests.classes.instr.dir" value="${dist.tests.dir}/classes-instr" />
 	<property name="tests.includes" value="**/*Tester.class,**/*Test.class,**/*TestCase.class" />
