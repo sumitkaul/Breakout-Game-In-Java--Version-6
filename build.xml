@@ -25,7 +25,7 @@
 	<property name="project.build.home" value="${code-root}/bin" />
 	<property name="dist" value="${code-root}/dist" />
 	<property name="test" value="${code-root}/test" />
-	<property name="testclasses" value="${code-root}/bin" />
+	<property name="testclasses" value="${code-root}/testbin" />
 	<property name="classes" value="${code-root}/bin" />
 	<property name="src" value="${code-root}/src" />
 	<property name="lib" value="${code-root}/lib" />
