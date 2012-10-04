@@ -9,9 +9,8 @@ public class AddQuestionMAction implements Action {
 
 	@Override
 	public void act(GameObject gameObject) {
-		String imagepath = gameObject.getImageFile();
 		if(gameObject.equals(Game.getSharedGame().getSelectedGameObject())){
-		gameObject.setImageFile(imagepath.split("/")[0]+"/question.png");
+		gameObject.setImageFile("question.png");
 		}
 		
 	}

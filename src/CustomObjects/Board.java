@@ -59,7 +59,7 @@ public class Board extends JPanel implements Resizable
 		super.paint(g);
 		List<GameObject> gameObjects = Game.getSharedGame().getGameObjects();
 		if(backGroundImagePath != null){
-			Image background = new ImageIcon(backGroundImagePath).getImage();
+			Image background = new ImageIcon(getClass().getResource("/"+backGroundImagePath)).getImage();
 			g.drawImage(background, 0, 0, this.getWidth(), this.getHeight(), null);
 		}
 		if(currentLayer.equals(Constants.ALL_LAYERS)) {

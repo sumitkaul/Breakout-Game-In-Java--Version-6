@@ -11,9 +11,16 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.security.CodeSource;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 
 import sun.audio.AudioPlayer;
@@ -22,7 +29,7 @@ import utilities.Actions;
 
 public class PlaySoundAction implements Action{
 	
-	private File clipName;
+	private String clipName;
 	public InputStream getInputAudioStream() {
 		return inputAudioStream;
 	}
@@ -46,6 +53,8 @@ public class PlaySoundAction implements Action{
 	
 	public int initialize(){
 		LOG.info("Choosing File");
+		//File system
+		/*
 		JFileChooser fileChooser = new JFileChooser("sounds");
 		fileChooser.addChoosableFileFilter(new FileFilter()
 		{
@@ -61,8 +70,37 @@ public class PlaySoundAction implements Action{
 				}
 		});
 		fileChooser.showOpenDialog(new JFrame());
+		*/
+		
+		//Jar
+		CodeSource src = getClass().getProtectionDomain().getCodeSource();
+		List<String> list = new ArrayList<String>();
+
+		
+		if( src != null ) {
+		    URL jar = src.getLocation();
+		    ZipInputStream zip;
+			try {
+				zip = new ZipInputStream(jar.openStream());
+				ZipEntry ze = null;
+
+				    while((ze = zip.getNextEntry()) != null) {
+				        String entryName = ze.getName();
+				        if(entryName.endsWith(".wav") || entryName.endsWith(".au") ) {
+				            list.add(entryName);
+				        }
+				    }
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		 }
+		String filename="";
+		filename =  (String)JOptionPane.showInputDialog(null,
+			    "Choose Sound File",
+			    "Sound Selection",
+			    JOptionPane.PLAIN_MESSAGE,null,list.toArray(),null);
 		try{
-		this.setClipName(fileChooser.getSelectedFile());
+		this.setClipName(filename);
 		}
 		catch (NullPointerException e)
 		{
@@ -71,14 +109,8 @@ public class PlaySoundAction implements Action{
 		LOG.info("The clipname is "+clipName);
 		
 		try {
-			setInputAudioStream(new FileInputStream(clipName));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		
-		}
-		catch (NullPointerException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
+			setInputAudioStream(getClass().getResourceAsStream("/"+clipName));
+		} catch (NullPointerException e) {
 			LOG.info("No File selected");
 			return 0;
 		}
@@ -96,11 +128,11 @@ public class PlaySoundAction implements Action{
 			LOG.error(e);
 		} 
 	}
-	public File getClipName() {
+	public String getClipName() {
 		return clipName;
 	}
 
-	public void setClipName(File clipName) {
+	public void setClipName(String clipName) {
 		this.clipName = clipName;
 	}
 
@@ -111,7 +143,7 @@ public class PlaySoundAction implements Action{
 		AudioStream as;
 		try {
 			//TO-DO : It reads from the file every time. Need to change.
-			as = new AudioStream(new FileInputStream(clipName));
+			as = new AudioStream(getClass().getResourceAsStream("/"+clipName));
 			AudioPlayer.player.start(as);
 		} catch (IOException e) {
 			LOG.info("Exception while trying to play audio");

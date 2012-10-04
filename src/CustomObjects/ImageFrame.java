@@ -11,6 +11,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FilenameFilter;
+import java.io.IOException;
+import java.net.URL;
+import java.security.CodeSource;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+
 import javax.swing.*;
 
 import utilities.Constants;
@@ -35,13 +43,37 @@ public class ImageFrame extends JFrame{
 		type= new JTextField("",8);
 		name= new JTextField("",8);
 		
+		//File system
+	/*	
 		File folder = new File(getClass().getResource("/").getPath());
 	    File[] listOfFiles = folder.listFiles(new FilenameFilter() {
 	        public boolean accept(File dir, String name) {
 	            return name.toLowerCase().endsWith(".png");
 	        }
 	    });
-	    
+	*/    
+		//Jar
+		CodeSource src = getClass().getProtectionDomain().getCodeSource();
+		List<String> list = new ArrayList<String>();
+		
+		if( src != null ) {
+		    URL jar = src.getLocation();
+		    ZipInputStream zip;
+			try {
+				zip = new ZipInputStream(jar.openStream());
+				ZipEntry ze = null;
+
+				    while((ze = zip.getNextEntry()) != null) {
+				        String entryName = ze.getName();
+				        if(entryName.endsWith(".png") ) {
+				            list.add(entryName);
+				        }
+				    }
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		 }
+		
 	    panel.add(new JLabel("Object Name: "));
 	    panel.add(name,"wrap");
 	    panel.add(new JLabel("Object Type: "));
@@ -49,16 +81,18 @@ public class ImageFrame extends JFrame{
 	    panel.add(new JLabel("Layer: "));
 	    layerBox = new JComboBox(Layers.getInstance().getLayers().toArray()); 
 	    panel.add(layerBox,"wrap");
-	    for (int i = 0; i < listOfFiles.length; i++) {
-	      if (listOfFiles[i].isFile()) {
-	        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/"+listOfFiles[i].getName()));
+	    
+		    
+	    for (int i = 0; i < list.size(); i++) {
+	 
+	        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/"+list.get(i)));
 			ImageIcon icon = new ImageIcon(image.getScaledInstance(50, 50, 1));
 			final JLabel iconimage = new JLabel(icon);
-			iconimage.setToolTipText(listOfFiles[i].getName());
+			iconimage.setToolTipText(list.get(i));
 			iconimage.addMouseListener(new MouseAdapter() {
 			      public void mouseClicked(MouseEvent e) {
 			    	  if(!name.getText().equalsIgnoreCase("")&&!type.getText().equalsIgnoreCase("")){
-			  			String filepath = getClass().getResource("/").getPath() + iconimage.getToolTipText();
+			  			String filename = iconimage.getToolTipText();
 			  			setVisible(false);
 			  			if(layer==null)
 			  				layer = ((String) layerBox.getSelectedItem());
@@ -67,10 +101,10 @@ public class ImageFrame extends JFrame{
 			  	    	}
 			  			Game.getSharedGame().getBoard().setCurrentLayer(layer);
 			  			if(isBackground){
-			  				Game.getSharedGame().getBoard().setBackGroundImagePath(filepath);
+			  				Game.getSharedGame().getBoard().setBackGroundImagePath(filename);
 			  			}
 			  			else{
-			  				GameMaker.getInstance().createNewObject(filepath,type.getText(),name.getText(), layer);
+			  				GameMaker.getInstance().createNewObject(filename,type.getText(),name.getText(), layer);
 			  			}
 			  			
 			  		}else{
@@ -86,13 +120,12 @@ public class ImageFrame extends JFrame{
 			}else{
 				panel.add(iconimage);
 			}
-	      } 
+	      
 	    }
 
 	    setSize(400, 600);
 	    add(scrollBar);
 	    setFocusable(true);
-	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setLocationRelativeTo(null);
 	    setTitle("Choose a image");
 	    setVisible(false);
@@ -106,7 +139,6 @@ public class ImageFrame extends JFrame{
 		      }
 		 });
 
-	   // okbutton.addActionListener(this);
 
 	}
 	

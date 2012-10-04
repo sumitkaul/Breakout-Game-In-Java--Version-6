@@ -9,9 +9,8 @@ public class AddFlagAction implements Action{
 
 	@Override
 	public void act(GameObject gameObject) {
-		String imagepath = gameObject.getImageFile();
 		if(gameObject.equals(Game.getSharedGame().getSelectedGameObject())){
-		gameObject.setImageFile(imagepath.split("/")[0]+"/flag_tile.png");
+		gameObject.setImageFile("flag_tile.png");
 		}
 	}
 

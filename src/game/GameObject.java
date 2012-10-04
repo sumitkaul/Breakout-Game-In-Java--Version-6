@@ -84,7 +84,7 @@ public class GameObject implements Resizable
 
 
 	public GameObject(double xPosition, double yPosition, double width,
-			double height, double xSpeed, double ySpeed, String imageFile, String objecttype,String name, String layer) {
+			double height, double xSpeed, double ySpeed, String imageName, String objecttype,String name, String layer) {
 		this.xPosition = xPosition;
 		this.yPosition = yPosition;
 		this.xSpeed = xSpeed;
@@ -92,13 +92,13 @@ public class GameObject implements Resizable
 		this.name = name;
 		this.height = height;
 		this.width = width;
-		this.imageFile = imageFile;
+		this.imageFile = imageName;
 		this.drawBehavior = new ImageDrawBehavior();
 		this.image = null;
 		this.objecttype=objecttype;
 		this.layer = layer;
 		try {
-			image = ImageIO.read(new File(imageFile));
+			image = ImageIO.read(getClass().getResourceAsStream("/"+imageFile));
 		} catch (IOException e){
 			LOG.warn("image " + imageFile + " not found");
 			getDefaultImage();
@@ -300,7 +300,7 @@ public class GameObject implements Resizable
 		this.imageFile = filename;
 		BufferedImage curimage = this.image;
 		try {
-			this.image = ImageIO.read(new File(imageFile));
+			this.image = ImageIO.read(getClass().getResourceAsStream("/"+imageFile));
 		} catch (IOException e){
 			LOG.warn("image " + imageFile + " not found");
 			this.image = curimage;
