@@ -2,7 +2,6 @@ package CustomObjects;
 
 import game.Game;
 import gameMaker.GameMaker;
-
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -18,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-
 import javax.swing.*;
 
 import utilities.Constants;

@@ -17,19 +17,18 @@ public class AddQuestionMAction implements Action {
 
 	@Override
 	public Actions getActionType() {
-		// TODO Auto-generated method stub
+		
 		return Actions.REPLACE2;
 	}
 
 	@Override
 	public void setAgainstObjectName(String againstObjectName) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public String getAgainstObjectName() {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 

@@ -3,10 +3,8 @@ package actions;
 import game.Game;
 import game.GameObject;
 import interfaces.Action;
-
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
-
 import utilities.Actions;
 import utilities.Constants;
 

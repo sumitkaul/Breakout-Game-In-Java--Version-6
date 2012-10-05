@@ -16,19 +16,19 @@ public class AddFlagAction implements Action{
 
 	@Override
 	public Actions getActionType() {
-		// TODO Auto-generated method stub
+		
 		return Actions.REPLACE1;
 	}
 
 	@Override
 	public void setAgainstObjectName(String againstObjectName) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public String getAgainstObjectName() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	

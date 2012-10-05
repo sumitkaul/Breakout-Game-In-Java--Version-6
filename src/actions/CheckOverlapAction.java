@@ -1,9 +1,7 @@
 package actions;
 
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
-
 import utilities.Actions;
 import game.Game;
 import game.GameObject;
@@ -32,19 +30,19 @@ public class CheckOverlapAction implements Action{
 
 	@Override
 	public Actions getActionType() {
-		// TODO Auto-generated method stub
+	
 		return Actions.CHECK_OVERLAP;
 	}
 
 	@Override
 	public void setAgainstObjectName(String againstObjectName) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public String getAgainstObjectName() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

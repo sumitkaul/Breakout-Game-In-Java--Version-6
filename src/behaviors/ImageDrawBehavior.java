@@ -2,7 +2,6 @@ package behaviors;
 
 import java.awt.Graphics;
 import java.awt.Image;
-
 import game.GameObject;
 import interfaces.DrawBehavior;
 

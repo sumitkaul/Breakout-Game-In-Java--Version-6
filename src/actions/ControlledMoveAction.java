@@ -51,19 +51,19 @@ public class ControlledMoveAction implements Action {
 	
 	@Override
 	public Actions getActionType() {
-		// TODO Auto-generated method stub
+		
 		return Actions.CONTROLLED_MOVE;
 	}
 
 	@Override
 	public void setAgainstObjectName(String againstObjectName) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public String getAgainstObjectName() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

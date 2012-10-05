@@ -20,19 +20,19 @@ public class NormalMoveAction implements Action {
 	
 	@Override
 	public Actions getActionType() {
-		// TODO Auto-generated method stub
+		
 		return Actions.NORMAL_MOVE;
 	}
 
 	@Override
 	public void setAgainstObjectName(String againstObjectName) {
-		// TODO Auto-generated method stub
+	
 		
 	}
 
 	@Override
 	public String getAgainstObjectName() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

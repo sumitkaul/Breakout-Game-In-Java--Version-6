@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-
 import utilities.Actions;
 import utilities.Constants;
 import game.GameObject;
@@ -49,13 +48,13 @@ public class ClockAction implements Action{
 
 	@Override
 	public void setAgainstObjectName(String againstObjectName) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public String getAgainstObjectName() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

@@ -2,7 +2,6 @@ package CustomObjects;
 
 import game.Game;
 import game.GameObject;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -10,10 +9,8 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
-
 import utilities.ActionObject;
 import utilities.Actions;
 import utilities.Event;
@@ -44,25 +41,24 @@ public class CustomJList extends JList implements MouseListener, KeyListener{
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+			
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -76,13 +72,13 @@ public class CustomJList extends JList implements MouseListener, KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

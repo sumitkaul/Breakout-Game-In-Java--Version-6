@@ -2,13 +2,8 @@ package actions;
 
 import game.GameObject;
 import gameMaker.GameMaker;
-
 import interfaces.Action;
-
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -17,12 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileFilter;
-
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 import utilities.Actions;
@@ -159,13 +149,13 @@ public class PlaySoundAction implements Action{
 
 	@Override
 	public void setAgainstObjectName(String againstObjectName) {
-		// TODO Auto-generated method stub
+	
 		
 	}
 
 	@Override
 	public String getAgainstObjectName() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

@@ -3,7 +3,6 @@ package CustomObjects;
 import game.Game;
 import game.GameObject;
 import interfaces.Resizable;
-
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.InputEvent;
@@ -12,10 +11,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.util.List;
-
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-
 import utilities.Constants;
 import utilities.Event;
 import utilities.Layers;

@@ -4,7 +4,6 @@ import game.Game;
 import game.GameObject;
 import interfaces.Action;
 import interfaces.GameObjectObserver;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -14,7 +13,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -25,7 +23,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
-
 import net.miginfocom.swing.MigLayout;
 import utilities.ActionObject;
 import utilities.Actions;
