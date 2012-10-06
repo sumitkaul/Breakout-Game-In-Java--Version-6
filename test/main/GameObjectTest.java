@@ -25,7 +25,7 @@ public class GameObjectTest {
 	}
 
 	@Test
-	public void testSetHeight() {
+	public void testHeight() {
 		gameObject.setHeight(20.0);
 		double actual = gameObject.getHeight();
 		double expected = 20.0;
@@ -33,7 +33,7 @@ public class GameObjectTest {
 	}
 
 	@Test
-	public void testSetWidth() {
+	public void testWidth() {
 		gameObject.setWidth(10.0);
 		double actual = gameObject.getWidth();
 		double expected = 10.0;
@@ -41,7 +41,7 @@ public class GameObjectTest {
 	}
 
 	@Test
-	public void testSetX() {
+	public void testX() {
 		gameObject.setX(100.0);
 		double actual = gameObject.getX();
 		double expected = 100.0;
@@ -49,7 +49,7 @@ public class GameObjectTest {
 	}
 
 	@Test
-	public void testSetY() {
+	public void testY() {
 		gameObject.setY(300.0);
 		double actual = gameObject.getY();
 		double expected = 300.0;
@@ -57,7 +57,7 @@ public class GameObjectTest {
 	}
 
 	@Test
-	public void testSetYSpeed() {
+	public void testYSpeed() {
 		gameObject.setYSpeed(5.0);
 		double actual = gameObject.getYSpeed();
 		double expected = 5.0;
@@ -65,7 +65,7 @@ public class GameObjectTest {
 	}
 
 	@Test
-	public void testSetXSpeed() {
+	public void testXSpeed() {
 		gameObject.setXSpeed(7.0);
 		double actual = gameObject.getXSpeed();
 		double expected = 7.0;
@@ -73,11 +73,35 @@ public class GameObjectTest {
 	}
 	
 	@Test
-	public void testSetRotationSpeed() {
+	public void testRotationSpeed() {
 		gameObject.setRotationSpeed(3.0);
 		double actual = gameObject.getRotationSpeed();
 		double expected = 3.0;
 		assertEquals(expected, actual, 0);
 	}
 	
+	@Test
+	public void testName() {
+		gameObject.setName("tank");
+		String actual = gameObject.getName();
+		String expected = "tank";
+		assertTrue(expected.equals(actual));
+	}
+
+	@Test
+	public void testLayer() {
+		gameObject.setLayer("one");
+		String actual = gameObject.getLayer();
+		String expected = "one";
+		assertTrue(expected.equals(actual));
+	}
+
+	@Test
+	public void testObjectType() {
+		gameObject.setObjecttype("rectangle");
+		String actual = gameObject.getObjecttype();
+		String expected = "rectangle";
+		assertTrue(expected.equals(actual));
+	}
+
 }
