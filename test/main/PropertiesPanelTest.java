@@ -12,7 +12,7 @@ public class PropertiesPanelTest {
 	@Before
 	public void setUp() throws Exception {
 		
-		PropertiesPanel panel =new PropertiesPanel();
+		PropertiesPanel panel =new PropertiesPanel() ;
 	}
 
 	@Test
