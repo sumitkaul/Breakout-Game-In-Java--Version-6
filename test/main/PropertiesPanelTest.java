@@ -24,10 +24,11 @@ public class PropertiesPanelTest {
 	}
 		
 	@Test
-	public void testIsNameChanged() {
-		PropertiesPanel.getInstance().setNameChanged(true);
-		assertEquals("Is the name changed", true, PropertiesPanel.getInstance().isNameChanged());
-		
+	public void testShapeString() {
+		panel.setShapeString("round");
+		String actual = panel.getShapeString();
+		String expected = "round";
+		assertTrue(expected.equals(actual));
 	}
 
 	@Test
