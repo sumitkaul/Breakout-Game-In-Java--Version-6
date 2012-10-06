@@ -42,15 +42,16 @@ public class ImageFrame extends JFrame{
 		name= new JTextField("",8);
 		
 		//File system
-	/*	
+		/*
 		File folder = new File(getClass().getResource("/").getPath());
 	    File[] listOfFiles = folder.listFiles(new FilenameFilter() {
 	        public boolean accept(File dir, String name) {
 	            return name.toLowerCase().endsWith(".png");
 	        }
 	    });
-	*/    
+	    */
 		//Jar
+	    
 		CodeSource src = getClass().getProtectionDomain().getCodeSource();
 		List<String> list = new ArrayList<String>();
 		

@@ -498,7 +498,7 @@ public class GameMaker implements Resizable
 		this.imageframe = imageframe;
 	}
 
-	public void createNewObject(String filepath, String objecttype, String name, String layer){
+	public GameObject createNewObject(String filepath, String objecttype, String name, String layer){
 		int sizeX;
 		int sizeY;
 		int speedX;
@@ -557,5 +557,7 @@ public class GameMaker implements Resizable
 		LOG.info("The Name of the Object is " + objectName);
 
 		board.repaint();
+		
+		return gameObject;
 	}
 }

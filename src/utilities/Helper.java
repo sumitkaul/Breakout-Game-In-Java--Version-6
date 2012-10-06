@@ -18,6 +18,7 @@ import actions.GameWinAction;
 import actions.NormalMoveAction;
 import actions.PlaySoundAction;
 import actions.RemoveAction;
+import actions.ShotAction;
 import actions.StartOverAction;
 
 
@@ -65,7 +66,7 @@ public class Helper {
 
 	public String[] getAllActions() {
 		if(actionList == null){
-			actionList = new String[11];
+			actionList = new String[12];
 			actionList[0] = getActionNameForId(Actions.NORMAL_MOVE);
 			actionList[1] = getActionNameForId(Actions.CONTROLLED_MOVE);
 			actionList[2] = getActionNameForId(Actions.REMOVE);
@@ -77,6 +78,7 @@ public class Helper {
 			actionList[8] = getActionNameForId(Actions.START_OVER);
 			actionList[9] = getActionNameForId(Actions.GAME_OVER);
 			actionList[10] = getActionNameForId(Actions.GAME_WIN);
+			actionList[11] = getActionNameForId(Actions.SHOT);
 		}
 		return actionList;
 	}
@@ -142,6 +144,8 @@ public class Helper {
 			return "Game Over";
 		else if(action == Actions.GAME_WIN)
 			return "Game Win";
+		else if(action == Actions.SHOT)
+			return "Shot";
 		return null;
 	}
 	
@@ -168,6 +172,8 @@ public class Helper {
 			return Actions.GAME_OVER;
 		else if(actionString.equalsIgnoreCase("Game Win"))
 			return Actions.GAME_WIN;
+		else if(actionString.equalsIgnoreCase("Shot"))
+			return Actions.SHOT;
 		return null;
 	}
 	
@@ -214,6 +220,8 @@ public class Helper {
 			return (new GameOverAction());
 		}else if(action == Actions.GAME_WIN){
 			return (new GameWinAction());
+		}else if(action == Actions.SHOT){
+			return (new ShotAction());
 		}
 		
 		return null;
