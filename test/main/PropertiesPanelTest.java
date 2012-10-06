@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import CustomObjects.PropertiesPanel;
+
 public class PropertiesPanelTest {
 
 	@Before
@@ -22,8 +24,6 @@ public class PropertiesPanelTest {
 
 	@Test
 	public void testSetNameChanged() {
-		
-		
 			
 	}
 
