@@ -34,19 +34,19 @@ public class ShotAction implements Action {
 
 	@Override
 	public Actions getActionType() {
-		// TODO Auto-generated method stub
+		
 		return Actions.SHOT;
 	}
 
 	@Override
 	public void setAgainstObjectName(String againstObjectName) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public String getAgainstObjectName() {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
