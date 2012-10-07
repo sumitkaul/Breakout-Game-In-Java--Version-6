@@ -2,16 +2,25 @@ package CustomObjects;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PropertiesPanelTest {
 
+	PropertiesPanel panel;
+	
 @Before
 public void setUp() throws Exception {
 
-PropertiesPanel panel =new PropertiesPanel();
+     panel =new PropertiesPanel();
 }
+
+@After
+public void tearDown() throws Exception {
+	panel = null;
+}
+
 
 @Test
 public void testIsNameChanged() {
