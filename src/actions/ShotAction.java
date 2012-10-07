@@ -16,7 +16,7 @@ public class ShotAction implements Action {
 		// TODO Auto-generated method stub
 		
 		Game.getSharedGame().getBoard().setCurrentLayer(gameObject.getLayer());
-		GameObject newGameObject = GameMaker.getInstance().createNewObject("s2.png","shot","shot".toString(), gameObject.getLayer());
+		GameObject newGameObject = GameMaker.getInstance().createNewObject("s2.png","shot","shot", gameObject.getLayer());
 		newGameObject.setX(gameObject.getX());
 		newGameObject.setY(gameObject.getY()-10);
 		newGameObject.setXSpeed(0);
