@@ -38,13 +38,8 @@ public class EventPanel extends JPanel implements GameObjectObserver{
 	private static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger
 	.getLogger(EventPanel.class);
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Event eventType;
-	//private CustomComboBox eventComboBox;
 
 	private JLabel eventLabel;
 	private JComboBox eventComboBox;
@@ -115,7 +110,6 @@ public class EventPanel extends JPanel implements GameObjectObserver{
 		
 		eventActionListModel = new DefaultListModel();
 		eventActionList = new CustomJList(eventActionListModel);
-		//eventActionList.setPreferredSize(new Dimension(150,100));
 		eventActionList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		eventActionList.setLayoutOrientation(JList.VERTICAL_WRAP);
 		
@@ -124,17 +118,14 @@ public class EventPanel extends JPanel implements GameObjectObserver{
 		
 		removeEventButton = new JButton("Remove");
 		add(removeEventButton,"wrap,grow");
-		
-		
-		
+					
 		/*
 		 * TO-DO : When events, link and action is selected, and if the user presses add, the respective object 
 		 * has to register itself with the game controller. Once registered, the game controller will notify the 
 		 * respective game object when such an event occurs. The game objects knows what to do as we have defined 
 		 * the action is should perform.
-		 * 
-		 */
-		
+		 */ 
+				
 		addEventButton.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -215,7 +206,7 @@ public class EventPanel extends JPanel implements GameObjectObserver{
 					GameObject selectedGameObject = Game.getSharedGame().getSelectedGameObject();
 					HashMap<Integer, List<ActionObject>> eventActionMap = selectedGameObject.getEventActionMap();
 
-					//eventActionMap.remove(event.getEventCode());
+					
 					List<ActionObject> actionObjectList = new ArrayList<ActionObject>();
 					actionObjectList.addAll(eventActionMap.get(event.getEventCode()));
 					for(ActionObject actionObject : actionObjectList) {
@@ -386,7 +377,6 @@ public class EventPanel extends JPanel implements GameObjectObserver{
    	
    		inputPanel = new KeyListenerPanel();
  		  inputPanel.setAssociatedEventType(eventType);
- 		  //inputPanel.setPreferredSize(new Dimension(150,50));
  		  inputPanel.setBackground(Color.darkGray);
  		  add(inputPanel,"grow");
    		  validate();

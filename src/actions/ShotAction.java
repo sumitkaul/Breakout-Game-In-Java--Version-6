@@ -13,7 +13,7 @@ public class ShotAction implements Action {
 	
 	@Override
 	public void act(GameObject gameObject) {
-		// TODO Auto-generated method stub
+		
 		
 		Game.getSharedGame().getBoard().setCurrentLayer(gameObject.getLayer());
 		GameObject newGameObject = GameMaker.getInstance().createNewObject("s2.png","shot","shot", gameObject.getLayer());
@@ -25,7 +25,7 @@ public class ShotAction implements Action {
 		newGameObject.addAction(Event.COLLISION_AGAINST.getEventCode(), new RemoveAction(), "");
 		for(GameObject obj : Game.getSharedGame().getGameObjects()) {
 			  if(obj!=newGameObject && obj!=gameObject) {
-				  //newGameObject.addAction(Event.COLLISION_AGAINST.getEventCode(), new RemoveAction(), obj.getName());
+				  
 				  obj.addAction(Event.COLLISION_AGAINST.getEventCode(), new RemoveAction(), newGameObject.getName());
 			  }
 		  }

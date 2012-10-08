@@ -20,12 +20,8 @@ import utilities.Layers;
 
 public class Board extends JPanel implements Resizable 
 {
-
-	/**
-	 * 
-	 */
 	private static final org.apache.log4j.Logger LOG =
-			org.apache.log4j.Logger.getLogger(Board.class);
+	org.apache.log4j.Logger.getLogger(Board.class);
 	private static final long serialVersionUID = 1L;
 	BindMouseMove movingAdapt = new BindMouseMove();
 	ResizeHandler gameobjectResize = new ResizeHandler();
@@ -80,7 +76,6 @@ public class Board extends JPanel implements Resizable
 	}
 
 
-	
 	class BindMouseMove extends MouseAdapter {
 	    private int x;
 	    private int y;

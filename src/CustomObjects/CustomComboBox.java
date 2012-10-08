@@ -13,9 +13,6 @@ import utilities.Event;
 
 public class CustomComboBox extends JPanel{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JComboBox comboBox = null;
 	private Event associatedEventType;

@@ -18,9 +18,6 @@ import utilities.Helper;
 
 public class CustomJList extends JList implements MouseListener, KeyListener{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private DefaultListModel listModel;
 	private Object[] selectedList;
@@ -113,10 +110,8 @@ public class CustomJList extends JList implements MouseListener, KeyListener{
 */				
 				getListModel().removeElement(element);
 				
-				
 			}
-			
-			
+						
 		}
 		
 	}

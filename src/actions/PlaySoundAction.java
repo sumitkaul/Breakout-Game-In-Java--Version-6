@@ -110,7 +110,6 @@ public class PlaySoundAction implements Action{
 	public void writeToCache()
 	{
 		ByteArrayOutputStream f = new ByteArrayOutputStream();
-		//String s = "This should be in cache";
 		byte buf[] = this.getClipName().toString().getBytes();
 		try {
 			f.write(buf);
