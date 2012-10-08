@@ -15,14 +15,6 @@ public class ControlledMoveAction implements Action {
 	
 	@Override
 	public void act(GameObject gameObject) {
-//		if(gameObject.getXSpeed()>0||gameObject.getYSpeed()>0){
-//			gameObject.setXSpeed(0);
-//			gameObject.setYSpeed(0);
-//		}
-//		else {
-//			gameObject.setXSpeed(xSpeed);
-//			gameObject.setYSpeed(ySpeed);
-//		}
 		
 		double x = gameObject.getX();
 		gameObject.setX(x + this.xSpeed);

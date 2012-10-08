@@ -25,7 +25,7 @@ public class CollideBounceAction implements Action {
 		xReversed.x -= xSpeed;
 		yReversed.y -= ySpeed;
 		ArrayList<GameObject> gameObjects = (ArrayList<GameObject>) Game.getSharedGame().getGameObjects();
-		//ArrayList<GameObject> collidingGameObjects = new ArrayList<GameObject>();
+	
 		for(GameObject obj : gameObjects){
 			if(obj.equals(gameObject)) continue;
 			if(obj.getName().equals(getAgainstObjectName())) {
