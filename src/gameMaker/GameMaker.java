@@ -120,7 +120,6 @@ public class GameMaker implements Resizable
 		verticalPane.setRightComponent(propertiesPane);
 		verticalPane.setVisible(true);
 		verticalPane.setDividerSize(10);
-		//verticalPane.setResizeWeight(0.8);
 		baseFrame.setContentPane(verticalPane);
 
 
@@ -131,8 +130,6 @@ public class GameMaker implements Resizable
 		fileMenu.add(open);
 		MenuItem save = new MenuItem("Save");
 		fileMenu.add(save);
-		//MenuItem saveAs = new MenuItem("Save As");
-		//fileMenu.add(saveAs);
 		MenuItem exit = new MenuItem("Exit");
 		fileMenu.add(exit);
 
@@ -539,7 +536,7 @@ public class GameMaker implements Resizable
 			{
 				LOG.error("No Object name inserted");
 				LOG.error("Setting defaults");
-				//objectName = UUID.randomUUID().toString();
+				
 				objectName = name;//PropertiesPanel.getInstance().getImageFileField().getText();
 				PropertiesPanel.getInstance().getImageFileField().setText(objectName);
 			}
@@ -548,7 +545,7 @@ public class GameMaker implements Resizable
 		}
 		catch (Exception exception) {
 			LOG.error("Exception");
-			//objectName = UUID.randomUUID().toString();
+			
 		}
 
 		GameObject gameObject = new GameObject(100, 100, sizeX, sizeY, speedX, speedY, filepath, objecttype, name, layer);

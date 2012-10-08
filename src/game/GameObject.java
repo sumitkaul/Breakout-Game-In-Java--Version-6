@@ -213,10 +213,7 @@ public class GameObject implements Resizable
 		
 		double objectNewWidth = (startObjectWidth + ((widthdiff * startObjectWidth)/(Constants.FRAME_WIDTH*0.8)));
 		double objectNewHeight = (startObjectHeight + ((heightdiff * startObjectHeight)/Constants.FRAME_HEIGHT));
-//		double objectNewX = (startObjectX + ((widthdiff * startObjectX)/(Constants.FRAME_WIDTH*0.8)));
-//		double objectNewY = (startObjectY + ((heightdiff * startObjectY)/Constants.FRAME_HEIGHT));
-//		LOG.info("New height = " + objectNewHeight);
-//		LOG.info("New width = " + objectNewWidth);
+
 		this.setHeight(objectNewHeight);
 		this.setWidth(objectNewWidth);
 		this.setX(this.getX()*((Constants.FRAME_WIDTH*0.8+widthdiff)/GameMaker.oldFrameWidth));

@@ -23,9 +23,6 @@ import utilities.Layers;
 
 import net.miginfocom.swing.MigLayout;
 
-
-
-
 public class PropertiesPanel implements GameObjectObserver{
 
 	private JPanel propertiesPanel;
@@ -76,7 +73,6 @@ public class PropertiesPanel implements GameObjectObserver{
 		LOG.info("Adding Properties Panel");
 		board = Game.getSharedGame().getBoard();
 		propertiesPanel = new JPanel();
-		//propertiesPanel.setLayout(new GridLayout(12,1));
 		propertiesPanel.setLayout(new MigLayout());
 		sizeXLabel = new JLabel();
 		sizeYLabel = new JLabel();
@@ -95,13 +91,7 @@ public class PropertiesPanel implements GameObjectObserver{
 		imageFileLabel.setText("Name of the Object");
 		speedXLabel.setText("X Speed:");
 		speedYLabel.setText("Y Speed:");
-		//sizeX.setSize(5, 20);
-		//sizeY.setSize(5,20);
-		//imageFileField.setSize(5, 20);
-		//speedXField.setSize(5, 20);
-		//speedYField.setSize(5, 20);
 		filePath = "images/";
-		
 		
 		propertiesPanel.add(sizeXLabel,"wrap");
 		propertiesPanel.add(sizeX,"wrap,grow");
@@ -122,8 +112,6 @@ public class PropertiesPanel implements GameObjectObserver{
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
 				
-				//String name = getImageFileField().getText();
-				//Game.getSharedGame().getSelectedGameObject().setName(name);
 				LOG.info("In change for image file field");
 				isNameChanged = true;
 				
@@ -152,7 +140,6 @@ public class PropertiesPanel implements GameObjectObserver{
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
 			
-				//String name = getImageFileField().getText();
 				try
 				{
 					LOG.info("in changed update");
@@ -216,7 +203,6 @@ public class PropertiesPanel implements GameObjectObserver{
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
 			
-				//String name = getImageFileField().getText();
 				try
 				{
 					LOG.info("in changed update");
@@ -275,7 +261,6 @@ public class PropertiesPanel implements GameObjectObserver{
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
 			
-				//String name = getImageFileField().getText();
 				try
 				{
 					LOG.info("in changed update");
@@ -329,8 +314,7 @@ public class PropertiesPanel implements GameObjectObserver{
 
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				
-				//String name = getImageFileField().getText();
+			
 				try
 				{
 					LOG.info("in changed update");
