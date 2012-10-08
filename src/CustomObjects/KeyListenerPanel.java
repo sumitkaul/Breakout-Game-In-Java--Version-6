@@ -30,13 +30,8 @@ public class KeyListenerPanel extends JPanel implements KeyListener, MouseListen
 		  infoLbl = new JLabel();
 		  infoLbl.setText("Click & press a key");
 		  infoLbl.setForeground(Color.WHITE);
-		  add(infoLbl);
-		  
-//		  currentKeyPressedLabel = new JLabel();
-//		  currentKeyPressedLabel.setText("No key pressed");
-//		  currentKeyPressedLabel.setForeground(Color.white);
-//		  add(currentKeyPressedLabel);
-		  
+		  add(infoLbl)
+  
 		  addKeyListener(this);
 		  addMouseListener(this);
 	}
