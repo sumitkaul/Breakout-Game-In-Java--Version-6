@@ -1,0 +1,10 @@
+0    [main] INFO  gameMaker.Main  - Creating GameMaker
+132  [main] DEBUG gameMaker.GameMaker  - creating new Board
+142  [main] INFO  CustomObjects.EventPanel  - Getting static instance of the events Panel
+143  [main] INFO  CustomObjects.EventPanel  - Adding Properties Panel
+144  [main] INFO  game.Game  - Registering observer CustomObjects.EventPanel[,0,0,0x0,invalid,layout=java.awt.FlowLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=java.awt.Dimension[width=200,height=400],minimumSize=,preferredSize=] for selected object update.
+263  [main] INFO  CustomObjects.PropertiesPanel  - Getting static instance of the properties Panel
+263  [main] INFO  CustomObjects.PropertiesPanel  - Adding Properties Panel
+269  [main] INFO  game.Game  - Registering observer CustomObjects.PropertiesPanel@1995bf19 for selected object update.
+635  [AWT-EventQueue-0] INFO  CustomObjects.Board  - width diff = 0
+635  [AWT-EventQueue-0] INFO  CustomObjects.Board  - heightdiff = 0
